@@ -1,0 +1,538 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap');
+
+:root {
+    /* ### Primary */
+
+--Light-red-CTA-text: hsl(356, 100%, 66%);
+--Very-light-red-CTA-hover-background-: hsl(355, 100%, 74%);
+--Very-dark-blue-headings: hsl(208, 49%, 24%);
+
+/* ### Neutral */
+
+--White-text: hsl(0, 0%, 100%);
+--Grayish-blue-footer-text: hsl(240, 2%, 79%);
+--Very-dark-grayish-blue-body-copy: hsl(207, 13%, 34%);
+--Very-dark-black-blue-footer-background: hsl(240, 10%, 16%);
+
+/* ### Gradient */
+
+/* Background gradient - Intro/CTA mobile nav: */
+
+--Very-light-red: hsl(13, 100%, 72%);
+--Light-red: hsl(353, 100%, 62%);
+
+/* Background gradient - body: */
+
+--Very-dark-gray-blue: hsl(237, 17%, 21%);
+--Very-dark-desaturated-blue: hsl(237, 23%, 32%);
+
+/* ## Typography */
+
+/* ### Body Copy */
+
+--fs-body-copy: 16px;
+
+/* font-family and font weights */
+--ff-overpass: 'Overpass', sans-serif;
+--fw-overpass-light:300;
+--fw-overpass-semibold:600;
+--ff-ubuntu : 'Ubuntu', sans-serif;
+--fw-ubuntu-regular:400;
+--fw-ubuntu-semibold:500;
+--fw-ubuntu-bold :700;
+
+}
+
+    .attribution { font-size: 11px; text-align: center; display: none;}
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--ff-overpass);
+    font-weight: var(--fw-overpass-light);
+}
+
+/* header styling which includes 
+    navigation ,title , start and learn buttons */
+header{
+    background-image:url(./images/bg-pattern-intro-desktop.svg), linear-gradient(120deg,hsl(13, 100%, 72%) 20%,hsl(353, 100%, 62%) 60%);
+    background-size: 150rem;
+    background-position: 30% 50%;
+    background-repeat: no-repeat;
+    height: 28rem;
+    border-bottom-left-radius: 80px;
+}
+
+/* Navigational menu styling */
+nav {
+    display: flex;
+    padding-inline: 10vw;
+    padding-top: 3rem;
+    align-items: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+    .menu >ul {
+        display: inline-flex;
+        gap: 1rem;
+    }
+    ul li a{
+        display: inline-flex;
+        text-decoration: none;
+        color:hsla(0, 0%, 100%,0.8);
+        font-family: var(--ff-ubuntu);
+        font-size: 13px;
+        font-weight: var(--fw-ubuntu-semibold);
+    }
+        ul li a:hover {
+            cursor: pointer;
+        }
+            ul li a i {
+                margin-left: 5px;
+            }
+            .active i {
+                transform: rotate(180deg);
+            }
+.logo {
+    margin-right: 3rem;
+    color:var(--White-text);
+    width: 80px;
+}
+.menu {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+}
+    .pages {
+        margin-right: auto;
+    }
+    .account {
+        align-items: center;
+    }
+        .signup {
+            padding: 0.75rem 2rem;
+            border-radius: 25px;
+            background-color: var(--White-text);
+            color: var(--Light-red);
+        }
+        .signup:hover,.signup:active {
+            background-color: hsl(355, 100%, 74%);
+            color: var(--White-text);
+        }
+
+/* Submenus styling  
+................*/
+.submenu{          
+    display: none;
+    position: absolute;
+    background-color: var(--White-text);
+    margin-top: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+}
+ .submenu li {
+        display: block;
+    }
+    .submenu li:not(:last-child) {
+
+        margin-bottom: 0.5rem;
+    }
+    .submenu li a {
+        color: var(--Very-dark-blue-headings);
+        font-weight: 100;
+        text-align: left;
+    }
+
+.mobile-menu {
+    display: none;
+}
+
+/* Styling title and buttons under navigation*/
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80%;
+}
+    .title h1 {
+        margin-top: 5rem;
+        color: var(--White-text);
+        font-family: var(--ff-ubuntu);
+        font-size: 3rem;
+    }
+    .title p {
+        margin-top: 1rem;
+        color:hsla(0, 0%, 100%,0.8) ;
+    }
+    .title div {
+        margin-top: 2rem;
+    }
+    .title div button {
+        border: 0px;
+        padding: 0.8rem 1rem;
+        border-radius: 25px;
+        color: var(--Light-red);
+        font-family: var(--ff-ubuntu);
+        font-weight: var(--fw-ubuntu-semibold);
+    }
+    .title div button:last-child {
+        margin-left: 0.75rem;
+        background: transparent;
+        border: 1px solid white;
+        color: var(--White-text);
+    }
+        .title div button:hover {
+            cursor: pointer;
+            background-color: hsl(355, 100%, 74%);
+            color: var(--White-text);
+        }
+        .title div button:last-child:hover {
+            background-color: var(--White-text);
+            color: var(--Light-red);
+        }
+
+    /* styling design for future section */
+
+    .design-for-future {
+        position: relative;
+        width: 100vw;
+        overflow:hidden;
+        height: fit-content;
+        font-family: var(--ff-overpass);
+        color: var(--Very-dark-blue-headings);
+    }
+    
+        .design-for-future picture img{
+            position: absolute;
+            right: -12rem;
+            top: 5rem;
+            width: 60vw;
+            z-index: -1;
+        }
+        .design-for-future h1 {
+            font-weight: var(--fw-overpass-semibold);
+            text-align: center;
+            margin-top: 2rem;
+            padding: 6rem;
+        }
+        .design-for-future div {
+            width: 34%;
+            margin-left: 12vw;
+            margin-bottom: 15vw;
+        }
+            .design-for-future div h3 {
+                font-weight: var(--fw-overpass-light);
+                margin-bottom: 2rem;
+                font-size: x-large;
+            }
+            .design-for-future div p {
+                color: hsla(207, 13%, 34%,0.8);
+                font-size: 14px;
+                margin-bottom: 5rem;
+                font-weight: var(--fw-overpass-light);
+                line-height: 1.5rem;
+            }
+            
+        /* state of the art section */
+
+    .state-of-art {
+        background-image: url(./images/bg-pattern-circles.svg),linear-gradient(90deg,hsl(237, 17%, 21%),hsl(237, 23%, 32%));
+        background-size: 55rem,100%;
+        background-position: -40% 80%;
+        background-repeat: no-repeat;
+        border-bottom-left-radius: 80px;
+        border-top-right-radius: 80px;
+        position: relative;
+        height: 60vh;
+        color: var(--White-text);
+    }
+        .state-of-art img {
+            position: absolute;
+            width: 40vw;
+            margin-left: 10vw;
+            top: -10vh;
+        }
+        .state-of-art div {
+            width: 35%;
+            float: right;
+            margin-right: 12vw;
+            padding-top: 3rem;
+        }
+            .state-of-art div h1 {
+                font-weight: var(--fw-overpass-semibold);
+                margin-top: 4rem;
+                margin-bottom: 2rem;
+                font-size: 28px;
+            }
+            .state-of-art div p {
+                font-size: 14px;
+                line-height: 1.5rem;
+                color: var(--Grayish-blue-footer-text);
+            }
+
+                /*  laptop image with blogger advantages section*/
+    
+.laptop {
+    width: 100%;
+    height: 120vh;
+    position: relative;
+    font-family: var(--ff-overpass);
+    color: var(--Very-dark-blue-headings);
+
+}
+    .laptop picture img{
+        position: absolute;
+        left: -5rem;
+        width: 58vw;
+        margin-top: 5rem;
+    }
+    .laptop div {
+        position: absolute;
+        right: 0;
+        width: 50%;
+        padding-top: 12rem;
+    }
+        .laptop div h3 {
+            font-weight: var(--fw-overpass-light);
+            margin-bottom: 2rem;
+            font-size: x-large;
+        }
+        .laptop div p {
+            color: hsla(207, 13%, 34%,0.8);
+            font-size: 14px;
+            margin-bottom: 5rem;
+            font-weight: var(--fw-overpass-light);
+            line-height: 1.5rem;
+        }
+    
+        /* footer navigational menu */
+.bottom-navigation{
+    background-color: var(--Very-dark-black-blue-footer-background);
+    border-top-right-radius: 80px;
+    padding-block: 3rem;
+    padding-inline: 8rem;
+
+}
+    .bottom-navigation >ul {
+        display: flex;
+        justify-content: space-around;
+    }
+        .bottom-navigation >ul >li >a{
+            margin-bottom: 2.5rem;
+            color: var(--White-text);
+            }
+        .footer-submenu a{
+            font-size: 11px;
+            margin-bottom: 0.75rem;
+            color: var(--Grayish-blue-footer-text);
+        }
+
+@media screen and (max-width:500px) {
+    body {
+        width: 100vw;
+    }
+    .mobile-menu {
+        display: block;
+        margin-left:auto;
+    }
+    nav{
+        padding-top: 3rem;
+   
+    }
+
+    .menu{
+        display: none;
+        position: absolute;
+        background-color: var(--White-text);
+        width: 80%;
+        top:8rem;
+        padding:2rem; 
+        text-align: center;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 0px rgb(141, 72, 72);
+    }
+        .menu >ul {
+            display: block;
+        }
+        .menu ul li{
+            margin-bottom: 2rem;
+        }
+        .menu >ul >li >a{
+            display: block;
+            color: black;
+            font-size: 16px;
+            font-weight: 100;
+            /* pointer-events: none; */
+        }
+            .menu >ul li a i{
+                color: var(--Light-red);
+            }
+
+
+        .account {
+            padding-top: 2rem;
+            border-top: 1px solid rgb(233, 226, 226);
+        }
+            .signup {
+                background-image: linear-gradient(90deg,hsl(13, 100%, 72%),hsl(353, 100%, 62%));
+                width: fit-content;
+                margin: auto;
+                color: var(--White-text) !important;
+            }
+    .submenu {
+        position: relative;
+        padding: 1rem;
+        background-color:hsla(207, 13%, 34%,.1) ;
+    }
+        .submenu li a {
+            color: var(--Very-dark-grayish-blue-body-copy);
+            text-align: center;
+            font-size: 14px;
+            
+        }
+    /* title RWD  */
+    .title h1 {
+        text-align: center;
+        font-size: 2rem;
+        padding-inline: 2rem;
+    }
+    .title p {
+        padding-inline: 2rem;
+        text-align: center;
+    }
+
+    /*moible RWD design of future */
+    .design-for-future h1 {
+        margin: 4rem 2rem 2rem 2rem;
+        padding: 0;
+        font-size: 1.6rem;
+        font-weight:var(--fw-overpass-light);
+    }
+    .design-for-future picture img{
+        position: static;
+        width: 100%;
+    }
+    .design-for-future div {
+        width: 100%;
+        margin: 0;
+        padding: 2rem;
+    }
+        .design-for-future div h3 {
+            text-align: center;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+        .design-for-future div p {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+    /* RWD mobile state of the art section */
+    .state-of-art {
+        background-size: 34rem,100%;
+        background-position: -6rem -12rem,0rem 0rem;
+        height: fit-content;
+        margin-top: 8rem;
+        padding-block: 9rem 5rem;
+    }
+        .state-of-art img {
+            width: 100%;
+            margin-left: 0;
+            top:-10rem;
+        }
+        .state-of-art div {
+            width: 100%;
+            float: unset;
+            margin: 0;
+            padding: 0;
+            padding-inline: 1.5rem;
+            text-align: center;
+        }
+    /* RWD Mobile laptop section */
+    .laptop {
+        height: fit-content;
+        /* padding: 2rem; */
+    }
+
+        .laptop picture img{
+            position: relative;
+            width:140vw ;
+            left: -20vw;
+            /* margin: 0; */
+        }
+        .laptop div {
+            position: static;
+            width: 100%;
+            padding: 2rem;
+        }
+            .laptop div h3 {
+                text-align: center;
+            }
+            .laptop div p {
+                text-align: center;
+            }
+    /* footer RWD Mobie */
+    .bottom-navigation >ul {
+        flex-direction: column;
+    }
+        .bottom-navigation >ul >li:first-child{
+            margin-bottom:1.5rem;
+        }
+        .bottom-navigation >ul >li >a{
+            font-size: 16px;
+            margin-block: 1.5rem;
+        }
+        .footer-submenu a{
+            font-size: 14px;
+            font-weight: 100;
+        }
+}
+
+@media screen and (max-width:800px) and (min-width:500px) {
+    .signup {
+        padding: 0.3rem 0.5rem;        
+    }
+    .header-heading {
+        text-align: center;
+    }
+    .design-for-future picture img {
+        position: static;
+        width: 60vw;
+        margin-left: 20vw;
+    }
+    .design-for-future h1 {
+        margin-block: 3rem;
+        padding: 0;
+    }
+    .design-for-future div {
+        width: 100%;
+        margin-left: 0;
+        padding: 2rem;
+    }
+    .state-of-art img {
+        right: 10vw;
+    }
+    .state-of-art div{
+        width: 100%;
+        float: none;
+        margin: 0;
+        padding-inline: 2rem;
+        padding-top: 13vw;
+    }
+    .state-of-art h1 {
+        width: 50%;
+
+    }
+    .laptop picture img {
+        margin-top: 30%;
+    }
+    .laptop div {
+        padding-top: 4rem;
+    }
+}   
